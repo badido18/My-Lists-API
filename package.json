@@ -1,0 +1,29 @@
+{
+  "name": "my-lists-api",
+  "version": "0.0.1",
+  "description": "to do list api",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start" : "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badido18/My-Lists-API.git"
+  },
+  "keywords": [
+    "to",
+    "do",
+    "list",
+    "api"
+  ],
+  "author": "badido18",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/badido18/My-Lists-API/issues"
+  },
+  "homepage": "https://github.com/badido18/My-Lists-API#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
