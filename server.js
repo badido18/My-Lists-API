@@ -2,13 +2,19 @@ const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv/config')
 const auth = require('./routes/auth')
+const BodyParser = require("body-parser")
 //building the express server
 const app = express()
 
 //connect to our data base
-mongoose.connect(process.env.DB_CONNECT , { useNewUrlParser: true,useUnifiedTopology: true  } , () => console.log("Connected to DB"))
+console.log("Server Started !")
+console.log("Connecting to DB...")
+mongoose.connect(process.env.DB_CONNECT , 
+    { useNewUrlParser: true,useUnifiedTopology: true  } ,
+     () => console.log("Connected to DB"))
 
-// midleware
+// midlewares
+app.use(BodyParser.json())
 app.use("/auth",auth)
 //routes
 app.get("/",(req,res) => {
