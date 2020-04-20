@@ -1,18 +1,18 @@
 const mongoose = require('mongoose')
-const User = require('./User')
-const Item = require('./Item')
 
 const ListSchema = mongoose.Schema({
-    user : {
-        type : User,
-        required : true
+    UserID : {
+        type : String,
+        required :true
     },
     Title : {
         type : String,
         required : true
     },
-    items : [Item.schema],
-    creationDate : Date,
+    creationDate : {
+        type :Date,
+        default : Date.now ,
+    },
     Deleted :{
         type :Boolean ,
         default : false

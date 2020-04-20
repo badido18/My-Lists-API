@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const List = require('./List')
 
 const UserSchema = mongoose.Schema({
     Full_Name :  {
@@ -19,7 +18,6 @@ const UserSchema = mongoose.Schema({
         required : true
     },
     Phone : String,
-    Lists : [List.schema],
     Deleted :{
         type :Boolean ,
         default : false

@@ -17,6 +17,7 @@ const ValidateSP = body => {
     return {error,msg}
 }
 
+//login validation
 const ValidateLI = body => {
     
     const UserValidation = Joi.object({
@@ -28,6 +29,33 @@ const ValidateLI = body => {
     return {error,msg}
 }
 
+//list validation
+const ValidateLIST = body => {
+    
+    const UserValidation = Joi.object({
+        Title : Joi.string().required().alphanum(),
+    })
+    const {error} = UserValidation.validate(body)
+    const msg = (error) ? error.details[0].message : null
+    return {error,msg}
+}
+
+//Item validaation
+const ValidateITM = body => {
+    
+    const UserValidation = Joi.object({
+        ListID : Joi.string().required(),
+        Title : Joi.string().min(1).required().alphanum(),
+        Description : Joi.string(),
+        Deadline : Joi.date()
+    })
+    const {error} = UserValidation.validate(body)
+    const msg = (error) ? error.details[0].message : null
+    return {error,msg}
+}
 
 
-module.exports = {ValidateSP,ValidateLI}
+
+
+
+module.exports = {ValidateSP,ValidateLI,ValidateLIST,ValidateITM}

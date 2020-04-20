@@ -2,8 +2,10 @@ const express = require("express")
 const User = require('../models/User.js')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
+const Vtkn = require('../tools/verifyToken')
 const {ValidateSP,ValidateLI}= require('../tools/validator')
 const bcrypt = require('bcryptjs')
+const mongoose = require('mongoose')
 router.post("/SignUp" , async (req,res) => {
 
     //Validate syntax
@@ -50,7 +52,9 @@ router.post("/login", async (req,res) => {
     if (error) return res.send(msg)
     //checking if username exists
     const UserExist = await User.findOne({Username : req.body.Username})
-    if(!UserExist) return res.send("This Username doesn't exists !")
+    if(!UserExist || UserExist.Deleted ) {
+        return res.send("This Username doesn't exists !")
+    }
     //checking password
     const LoginPass = await bcrypt.compare(req.body.Password,UserExist.Password)
     if (LoginPass)  {
@@ -64,9 +68,17 @@ router.post("/login", async (req,res) => {
 
 })
 
-router.delete("/:id", async (req,res) => {
-    const removedUser = await User.deleteOne({_id : req.params.id})
+//delete user
+router.delete("/user/delete", Vtkn ,async (req,res) => {
+    const {id} = jwt.decode(req.header('auth-token'))
+    const removedUser = await User.updateOne({_id : mongoose.Types.ObjectId(id)},{Deleted : false})
     res.json(removedUser)
+})
+
+//disconnect 
+router.get("/logout",Vtkn, (req,res) => {
+    res.header('auth-token',null).send("Disconnected")
+    //last will be handle on client side
 })
 
 

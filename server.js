@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv/config')
 const auth = require('./routes/auth')
+const lists = require('./routes/lists')
 const BodyParser = require("body-parser")
 
 //building the express server
@@ -16,6 +17,7 @@ mongoose.connect(process.env.DB_CONNECT ,
 // midlewares
 app.use(BodyParser.json())
 app.use("/auth",auth)
+app.use("/api",lists)
 //routes
 app.get("/",(req,res) => {
     res.send("Welcome to My List API\nLook at the documentation by geting /doc")

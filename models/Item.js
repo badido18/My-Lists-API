@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const List = require('./List')
+
 
 const ItemSchema = mongoose.Schema({
-    list : {
-        type : List,
+    ListID : {
+        type : String,
         required : true
     },
     Title : {
@@ -11,7 +11,10 @@ const ItemSchema = mongoose.Schema({
         required : true
     },
     Description : String,
-    Creation  : Date,
+    Creation  : {
+        type :Date,
+        default : Date.now ,
+    },
     Deadline : Date,
     Deleted :{
         type :Boolean ,
