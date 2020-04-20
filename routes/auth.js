@@ -33,8 +33,8 @@ router.post("/SignUp" , async (req,res) => {
         res.json(err)
     }
     try {
-        jwt.sign({user},process.env.PAYLOAD,(err,token)=> {
-        res.json(token)
+        jwt.sign({id : user._id},process.env.PAYLOAD,(err,token)=> {
+            res.header('auth-token',token).send(token)
     })
     } catch (err) {
         res.json(err)
@@ -54,8 +54,9 @@ router.post("/login", async (req,res) => {
     //checking password
     const LoginPass = await bcrypt.compare(req.body.Password,UserExist.Password)
     if (LoginPass)  {
-        jwt.sign({UserExist},process.env.PAYLOAD,(err,token)=> {
-            err ? res.send("Error while giving a token") :  res.json(token)
+        jwt.sign({id : UserExist._id},process.env.PAYLOAD,(err,token)=> {
+            if(err)  return res.send("Error while giving a token")
+            res.header('auth-token',token).send(token)
             console.log("Logged On !")
         })
     }
