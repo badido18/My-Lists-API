@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "fd74ec4f-19a6-4a38-b8a3-9fe1e7dd6715",
+		"name": "My lists Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "log in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\" : \"user1\",\n\t\"Password\" : \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Full_Name\" : \"user1\",\n    \"Email\" : \"user@mylists.dz\" ,\n    \"Password\" : \"1234\",\n    \"Username\" : \"user1\",\n    \"Phone\" : \"0000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/SignUp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"SignUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove User",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/auth/user/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Access",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Documentation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:3000/doc",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"doc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Lists",
+			"item": [
+				{
+					"name": "add list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/Lists/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"Lists",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get lists",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/Lists/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"Lists",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\" : \"myfirstlist\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/Lists/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"Lists",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update lists title",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\" : \"fist list\" ,\n\t\"newTitle\" : \"first list\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/Lists/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"Lists",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete backup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/del/Lists/backup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"del",
+								"Lists",
+								"backup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all lists",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/del/Lists",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"del",
+								"Lists"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/item/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"item",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get items",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/items/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\" : \"myfirstlist\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/item/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"item",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update item",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\" : \"fist list\" ,\n\t\"newTitle\" : \"first list\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/item/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"item",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete list items backup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/del/items/backup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"del",
+								"items",
+								"backup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all list items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/del/items",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"del",
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6e2574bd-e0d3-495f-844d-d32ad0f42043",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cc632c0-11c6-48cc-863c-fa65d0581f9d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
