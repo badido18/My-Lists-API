@@ -3,7 +3,7 @@ const Joi = require('@hapi/joi')
 
 //user Sign up validation
 
-const ValidateSP = (body) => {
+const ValidateSP = body => {
     
     const UserValidation = Joi.object({
         Full_Name : Joi.string().min(5).required().alphanum() ,
@@ -17,4 +17,17 @@ const ValidateSP = (body) => {
     return {error,msg}
 }
 
-module.exports.ValidateSP = ValidateSP
+const ValidateLI = body => {
+    
+    const UserValidation = Joi.object({
+        Password : Joi.string().min(4).required(),
+        Username : Joi.string().min(5).required().alphanum(),
+    })
+    const {error} = UserValidation.validate(body)
+    const msg = (error) ? error.details[0].message : null
+    return {error,msg}
+}
+
+
+
+module.exports = {ValidateSP,ValidateLI}
