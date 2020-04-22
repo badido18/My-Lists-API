@@ -455,7 +455,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\n    \"Title\" : \"firstitem\",\n    \"Description\" : \"second list\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -463,14 +463,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/item/add",
+							"raw": "localhost:3000/api/5e9db0cf3701c722cc7e1e24/add",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"item",
+								"5e9db0cf3701c722cc7e1e24",
 								"add"
 							]
 						}
@@ -503,15 +503,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/items/",
+							"raw": "localhost:3000/api/5e9dafbab216b82548f6acaf/items",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"items",
-								""
+								"5e9dafbab216b82548f6acaf",
+								"items"
 							]
 						}
 					},
@@ -552,15 +552,16 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/item/delete",
+							"raw": "localhost:3000/api/5e9db0cf3701c722cc7e1e24/del/5e9f8e8df395ba14e479b64d",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"item",
-								"delete"
+								"5e9db0cf3701c722cc7e1e24",
+								"del",
+								"5e9f8e8df395ba14e479b64d"
 							]
 						}
 					},
@@ -593,7 +594,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Title\" : \"fist list\" ,\n\t\"newTitle\" : \"first list\"\n}",
+							"raw": "{\n\t\"Title\" : \"mody title\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -601,15 +602,16 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/item/update",
+							"raw": "localhost:3000/api/5e9db0cf3701c722cc7e1e24/upd/5e9f8e8df395ba14e479b64d",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"item",
-								"update"
+								"5e9db0cf3701c722cc7e1e24",
+								"upd",
+								"5e9f8e8df395ba14e479b64d"
 							]
 						}
 					},
@@ -618,19 +620,39 @@
 				{
 					"name": "delete list items backup",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/del/items/backup",
+							"raw": "localhost:3000/api/5e9dafbab216b82548f6acaf/backup/del",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"del",
-								"items",
-								"backup"
+								"5e9dafbab216b82548f6acaf",
+								"backup",
+								"del"
 							]
 						}
 					},
@@ -639,18 +661,38 @@
 				{
 					"name": "delete all list items",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWQwNDllZjNkN2Q5Mzc2MDFmMjJiNCIsImlhdCI6MTU4NzM4ODM3N30.oHXh_VIjwghcHFy5IvRu6X94O3OhKeL8LOmG0y5iQ_E",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "auth-token",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/del/items",
+							"raw": "localhost:3000/api/5e9dafbab216b82548f6acaf/del",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"del",
-								"items"
+								"5e9dafbab216b82548f6acaf",
+								"del"
 							]
 						}
 					},
