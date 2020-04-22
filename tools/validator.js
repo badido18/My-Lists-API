@@ -44,7 +44,6 @@ const ValidateLIST = body => {
 const ValidateITM = body => {
     
     const UserValidation = Joi.object({
-        ListID : Joi.string().required(),
         Title : Joi.string().min(1).required().alphanum(),
         Description : Joi.string(),
         Deadline : Joi.date()

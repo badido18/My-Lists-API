@@ -51,7 +51,7 @@ router.post("/Lists/add", Vtkn , async (req,res) => {
 router.delete("/Lists/delete", Vtkn , async (req,res) => {
     const {id} = jwt.decode(req.header('auth-token'))
     try {  
-        await List.deleteOne({Title : req.body.Title ,UserID : id})
+        await List.updateOne({Title : req.body.Title ,UserID : id},{Deleted : true})
         res.send("Deleted successfully")
     } catch (err) {
         res.status(400).send("Failed deleting list from DB !")
