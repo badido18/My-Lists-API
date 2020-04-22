@@ -27,7 +27,7 @@ app.get("/",(req,res) => {
 })
 
 app.get("/doc", (req,res, ) => {
-    res.send("Helo welcome to My Lists Api documentation")
+    res.send("https://github.com/badido18/My-Lists-API/README.md")
     console.log("Documentation accessed")
 })
 
