@@ -1,12 +1,13 @@
 # My Lists API
 
 a RESTfull API of Todo lists made with Express and MangoDB
+
 **Packages** used in this repository : *@hapi/joi* and *@jsonwebtoken* and *@bcrypt*.
 > build for To do list applications (Mobile Web or Destkop)
 
 # Introduction
 
-This APU provides :
+This API provides :
 
 * **User authentification** and **registration** with hached **passswords**
 
